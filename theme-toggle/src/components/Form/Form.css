@@ -1,0 +1,28 @@
+.header-light {
+  color: black;
+}
+
+.header-dark {
+  color: whitesmoke;
+}
+
+.form-light {
+  background-color: #f0f0f0;
+  width: max-content;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.form-dark {
+  background-color: black;
+  color: white;
+  width: max-content;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
