@@ -30,13 +30,15 @@
 
 import React from "react";
 // import { ObjectDemo } from "./components/ObjectDemo";
-import { UseMemoDemo } from "./components/UseMemoDemo";
+// import { UseMemoDemo } from "./components/UseMemoDemo";
+import { UseReducerDemo } from "./components/UseReducerDemo";
 
 export function App() {
   return (
     <div>
       {/* <ObjectDemo /> */}
-      <UseMemoDemo />
+      {/* <UseMemoDemo /> */}
+      <UseReducerDemo />
     </div>
   );
 }

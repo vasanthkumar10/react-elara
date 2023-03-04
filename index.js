@@ -231,27 +231,58 @@
 
 // console.log(sqNums);
 
-Array.prototype.myFilter = function (callbackfn) {
-  let newArr = [];
-  for (let i = 0; i < this.length; i++) {
-    if (callbackfn(this[i], i, this)) {
-      newArr.push(this[i]);
-    }
-  }
-  return newArr;
-};
+// Array.prototype.myFilter = function (callbackfn) {
+//   let newArr = [];
+//   for (let i = 0; i < this.length; i++) {
+//     if (callbackfn(this[i], i, this)) {
+//       newArr.push(this[i]);
+//     }
+//   }
+//   return newArr;
+// };
 
-let nums = [1, 2, 3, 4, 5];
+// let nums = [1, 2, 3, 4, 5];
+// // console.log(
+// //   nums.filter((num, index, arr) => {
+// //     console.log(num, index, arr);
+// //     return num > 2;
+// //   })
+// // );
+
 // console.log(
-//   nums.filter((num, index, arr) => {
+//   nums.myFilter((num, index, arr) => {
 //     console.log(num, index, arr);
 //     return num > 2;
 //   })
 // );
 
-console.log(
-  nums.myFilter((num, index, arr) => {
-    console.log(num, index, arr);
-    return num > 2;
-  })
-);
+// Reducer
+const nums = [1, 2, 3, 4, 5];
+// const sum = nums.reduce((accumulator, current, index, arr) => {
+//   console.log(
+//     `accumulator - ${accumulator}, current - ${current} ${index} ${arr}`
+//   );
+//   return accumulator + current;
+// }, 10);
+
+// console.log(sum);
+
+Array.prototype.myReduce = function (callbackfn, initialValue) {
+  let accumulator = initialValue;
+  for (let i = 0; i < this.length; i++) {
+    if (accumulator !== undefined) {
+      accumulator = callbackfn(accumulator, this[i], i, this);
+    } else {
+      accumulator = this[i];
+    }
+  }
+
+  return accumulator;
+};
+
+const sum = nums.myReduce((acc, curr, i, arr) => {
+  console.log(acc, curr, i, arr);
+  return acc + curr;
+});
+
+console.log("sum", sum);
