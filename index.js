@@ -267,22 +267,44 @@ const nums = [1, 2, 3, 4, 5];
 
 // console.log(sum);
 
-Array.prototype.myReduce = function (callbackfn, initialValue) {
-  let accumulator = initialValue;
-  for (let i = 0; i < this.length; i++) {
-    if (accumulator !== undefined) {
-      accumulator = callbackfn(accumulator, this[i], i, this);
-    } else {
-      accumulator = this[i];
-    }
-  }
+// Array.prototype.myReduce = function (callbackfn, initialValue) {
+//   let accumulator = initialValue;
+//   for (let i = 0; i < this.length; i++) {
+//     if (accumulator !== undefined) {
+//       accumulator = callbackfn(accumulator, this[i], i, this);
+//     } else {
+//       accumulator = this[i];
+//     }
+//   }
 
-  return accumulator;
-};
+//   return accumulator;
+// };
 
-const sum = nums.myReduce((acc, curr, i, arr) => {
-  console.log(acc, curr, i, arr);
-  return acc + curr;
-});
+// const sum = nums.myReduce((acc, curr, i, arr) => {
+//   console.log(acc, curr, i, arr);
+//   return acc + curr;
+// });
 
-console.log("sum", sum);
+// console.log("sum", sum);
+
+const arr = [
+  {
+    title: "vasanth",
+    description: "mystic force",
+  },
+  {
+    title: "kumar",
+    description: "dino thunder",
+  },
+  {
+    title: "power rangers",
+    description: "ninja storm",
+  },
+  {
+    title: "rangers",
+    description: "jungle force",
+  },
+];
+
+let sortedArr = arr.sort((a, b) => a.description.localeCompare(b.description));
+console.log(sortedArr);
